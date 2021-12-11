@@ -1,4 +1,4 @@
-# algo-roller
+# algo-prng-roller
  
 Demo's an on-chain dice roller with simple pseudo random numbers.
  
@@ -26,7 +26,14 @@ python3 -m pip install -r requirements.txt
  
 ## Usage
  
-TODO: Implement
+~~~
+go run ./cmd/game network start
+go run ./cmd/game create accounts 
+go run ./cmd/game deploy
+...
+go run ./cmd/game status app global
+go run ./cmd/game network stop
+~~~
  
 =====
  

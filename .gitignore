@@ -30,16 +30,19 @@ yarn-error.log*
 
 # algoDEA and network files
 /generated-src
+/net-data
 /net1
 
 # algo files
+*.id
+*.key
 *.txs
 *.txn
 *.rej
 *.ltxn
 *.msgp
 *.teal
-*.frag
+*.prog
 
 # Specific
 splittransaction*

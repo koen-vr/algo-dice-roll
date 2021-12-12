@@ -7,9 +7,9 @@ import (
 
 	"github.com/algorand/go-algorand-sdk/types"
 
-	acc "github.com/koen-vr/algo-prng-roller/shared/account"
-	app "github.com/koen-vr/algo-prng-roller/shared/contract"
-	net "github.com/koen-vr/algo-prng-roller/shared/network"
+	acc "github.com/koen-vr/algo-dice-roll/shared/account"
+	app "github.com/koen-vr/algo-dice-roll/shared/contract"
+	net "github.com/koen-vr/algo-dice-roll/shared/network"
 )
 
 var Deploy = &cobra.Command{

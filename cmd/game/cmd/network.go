@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/koen-vr/algo-prng-roller/shared/network"
+	"github.com/koen-vr/algo-dice-roll/shared/network"
 )
 
 func init() {

@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	exec "github.com/koen-vr/algo-prng-roller/shared/execute"
+	exe "github.com/koen-vr/algo-dice-roll/shared/execute"
 )
 
 type Config struct {
@@ -30,7 +30,7 @@ func IsActive() bool {
 func Create() error {
 	fmt.Println("### Creating private network")
 
-	out, err := exec.List([]string{"-c", fmt.Sprintf(
+	out, err := exe.List([]string{"-c", fmt.Sprintf(
 		"goal network create -n tn50e -t ./network.json -r %s", netPath,
 	)})
 	if len(out) > 0 {
@@ -63,7 +63,7 @@ func Create() error {
 	}
 	// Start the network
 
-	out, err = exec.List([]string{"-c", fmt.Sprintf(
+	out, err = exe.List([]string{"-c", fmt.Sprintf(
 		"goal network start -r %s", netPath,
 	)})
 	if len(out) > 0 {
@@ -74,7 +74,7 @@ func Create() error {
 		return err
 	}
 
-	out, err = exec.List([]string{"-c", fmt.Sprintf(
+	out, err = exe.List([]string{"-c", fmt.Sprintf(
 		"goal network status -r %s", netPath,
 	)})
 	if len(out) > 0 {
@@ -91,7 +91,7 @@ func Create() error {
 func Destroy() error {
 	fmt.Println("### Destroying private network")
 
-	out, err := exec.List([]string{"-c", fmt.Sprintf(
+	out, err := exe.List([]string{"-c", fmt.Sprintf(
 		"goal network stop -r %s", netPath,
 	)})
 	if len(out) > 0 {
@@ -102,7 +102,7 @@ func Destroy() error {
 		return err
 	}
 
-	out, err = exec.List([]string{"-c", fmt.Sprintf(
+	out, err = exe.List([]string{"-c", fmt.Sprintf(
 		"goal network delete -r %s", netPath,
 	)})
 	if len(out) > 0 {
@@ -113,10 +113,10 @@ func Destroy() error {
 		return err
 	}
 
-	exec.List([]string{"-c", "rm -f ./*.rej"})
-	exec.List([]string{"-c", "rm -f ./*.txn"})
-	exec.List([]string{"-c", "rm -f ./*.txs"})
-	exec.List([]string{"-c", "rm -f ./*.frag"})
+	exe.List([]string{"-c", "rm -f ./*.rej"})
+	exe.List([]string{"-c", "rm -f ./*.txn"})
+	exe.List([]string{"-c", "rm -f ./*.txs"})
+	exe.List([]string{"-c", "rm -f ./*.frag"})
 
 	return nil
 }

@@ -5,9 +5,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	app "github.com/koen-vr/algo-prng-roller/shared/contract"
-	exc "github.com/koen-vr/algo-prng-roller/shared/execute"
-	net "github.com/koen-vr/algo-prng-roller/shared/network"
+	app "github.com/koen-vr/algo-dice-roll/shared/contract"
+	exc "github.com/koen-vr/algo-dice-roll/shared/execute"
+	net "github.com/koen-vr/algo-dice-roll/shared/network"
 )
 
 func init() {

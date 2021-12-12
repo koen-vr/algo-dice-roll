@@ -1,4 +1,4 @@
-module github.com/koen-vr/algo-prng-roller
+module github.com/koen-vr/algo-dice-roll
 
 go 1.17
 

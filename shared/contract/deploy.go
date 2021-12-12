@@ -9,7 +9,7 @@ import (
 	"github.com/algorand/go-algorand-sdk/future"
 	"github.com/algorand/go-algorand-sdk/types"
 
-	net "github.com/koen-vr/algo-prng-roller/shared/network"
+	net "github.com/koen-vr/algo-dice-roll/shared/network"
 )
 
 func Deploy(cfg Config) error {

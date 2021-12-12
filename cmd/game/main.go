@@ -7,7 +7,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/koen-vr/algo-prng-roller/cmd/game/cmd"
+	"github.com/koen-vr/algo-dice-roll/cmd/game/cmd"
 )
 
 var (

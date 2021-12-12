@@ -9,8 +9,8 @@ import (
 
 	"github.com/algorand/go-algorand-sdk/logic"
 
-	exec "github.com/koen-vr/algo-prng-roller/shared/execute"
-	net "github.com/koen-vr/algo-prng-roller/shared/network"
+	exe "github.com/koen-vr/algo-dice-roll/shared/execute"
+	net "github.com/koen-vr/algo-dice-roll/shared/network"
 )
 
 func Build(list []string) error {
@@ -35,12 +35,12 @@ func CleanUp(list []string) error {
 }
 
 func cleanUp(name string) error {
-	if _, err := exec.List([]string{"-c", fmt.Sprintf(
+	if _, err := exe.List([]string{"-c", fmt.Sprintf(
 		"rm -f ./contracts/%s.teal", name,
 	)}); nil != err {
 		return err
 	}
-	if _, err := exec.List([]string{"-c", fmt.Sprintf(
+	if _, err := exe.List([]string{"-c", fmt.Sprintf(
 		"rm -f ./contracts/%s.prog", name,
 	)}); nil != err {
 		return err
@@ -49,7 +49,7 @@ func cleanUp(name string) error {
 }
 
 func build(name string) error {
-	if _, err := exec.List([]string{"-c", fmt.Sprintf(
+	if _, err := exe.List([]string{"-c", fmt.Sprintf(
 		"python3 ./contracts/%s.py > ./contracts/%s.teal", name, name,
 	)}); nil != err {
 		return fmt.Errorf("build %s failed: %s", name, err)

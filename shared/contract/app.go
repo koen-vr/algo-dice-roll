@@ -9,7 +9,7 @@ import (
 	"github.com/algorand/go-algorand-sdk/crypto"
 	"github.com/algorand/go-algorand-sdk/types"
 
-	net "github.com/koen-vr/algo-prng-roller/shared/network"
+	net "github.com/koen-vr/algo-dice-roll/shared/network"
 )
 
 type Config struct {

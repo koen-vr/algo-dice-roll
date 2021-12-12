@@ -5,8 +5,8 @@ import (
 
 	"github.com/algorand/go-algorand-sdk/types"
 
-	exec "github.com/koen-vr/algo-prng-roller/shared/execute"
-	net "github.com/koen-vr/algo-prng-roller/shared/network"
+	exe "github.com/koen-vr/algo-dice-roll/shared/execute"
+	net "github.com/koen-vr/algo-dice-roll/shared/network"
 )
 
 func FundFromSeed(amount uint64, to string) error {
@@ -31,7 +31,7 @@ func FundFromSeed(amount uint64, to string) error {
 			"account: invalid seed address: %s", from,
 		)
 	}
-	if _, err := exec.List([]string{"-c", fmt.Sprintf(
+	if _, err := exe.List([]string{"-c", fmt.Sprintf(
 		"goal -d %s clerk send -a %d -f %s -t %s",
 		net.NodePath(), amount*10000000000000, from, to,
 	)}); nil != err {
@@ -48,7 +48,7 @@ func isValidAddress(addr string) bool {
 }
 
 func getSeedAddress() (string, error) {
-	return exec.List([]string{"-c", fmt.Sprintf(
+	return exe.List([]string{"-c", fmt.Sprintf(
 		"goal account list -d %s | awk '{ print $3 }' | head -n 1",
 		net.NodePath(),
 	)})
